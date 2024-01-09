@@ -1,4 +1,4 @@
-console.log('jnfnf');
+import {cart} from '../data/cart.js';
 let totalhtml = '';
 // const container = document.querySelector('.products-grid');
 products.forEach((product) => {

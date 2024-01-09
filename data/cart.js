@@ -1,2 +1,2 @@
 console.log('sjbcdsb');
-const cart=[];
+export const cart=[];
