@@ -31,3 +31,10 @@ export function Addtocart(productId){
          }
  
  }
+export function remove1(removeId) {
+     cart.forEach((item,idx)=>{
+        if (removeId===item.id) {
+            cart.splice(idx,1);
+        }
+     });
+}

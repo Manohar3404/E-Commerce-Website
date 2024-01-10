@@ -1,5 +1,6 @@
 import {cart,Addtocart} from '../data/cart.js';
 import {products} from '../data/products.js'
+
 let totalhtml = '';
 // const container = document.querySelector('.products-grid');
 products.forEach((product) => {
