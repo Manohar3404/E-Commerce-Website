@@ -1,6 +1,6 @@
 import {cart,Addtocart} from '../data/cart.js';
 import {products} from '../data/products.js'
-
+updatecartquntity();
 let totalhtml = '';
 // const container = document.querySelector('.products-grid');
 products.forEach((product) => {
@@ -12,6 +12,7 @@ products.forEach((product) => {
     </div>
 
     <div class="product-name limit-text-to-2-lines">
+    
       ${product.name}
     </div>
 

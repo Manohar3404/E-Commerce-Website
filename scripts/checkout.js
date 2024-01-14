@@ -1,6 +1,7 @@
 import { products} from "../data/products.js";
 import { cart,remove1} from "../data/cart.js";
 import { moneyformat } from './utils/money.js';
+console.log('check',cart);
 let checkouthtml='';
 cart.forEach((cartitem)=>{
     let matchingproduct;
@@ -8,7 +9,7 @@ cart.forEach((cartitem)=>{
         if (product.id===cartitem.id)
             matchingproduct=product;
     });
-    console.log('check',matchingproduct);
+    // console.log('check',matchingproduct);
     checkouthtml+=
         `    <div class="cart-item-container-${matchingproduct.id}">
         <div class="delivery-date">
@@ -87,15 +88,12 @@ cart.forEach((cartitem)=>{
         </div>
         `;
 });
-// console.log(checkouthtml);
+
 document.querySelector('.order-summary').innerHTML=checkouthtml;
 document.querySelectorAll('.delete-quantity-link').forEach((link) => {
     link.addEventListener('click', () => {
-        // Corrected to use removeId.currentTarget.dataset.productId
         const productId = link.dataset.productId;
-        console.log(productId);
         remove1(productId);
-        console.log(cart);
         document.querySelector(`.cart-item-container-${productId}`).remove();
     });
 });
