@@ -1,8 +1,11 @@
 import { products} from "../data/products.js";
 import { cart,remove1} from "../data/cart.js";
 import { moneyformat } from './utils/money.js';
+import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 console.log('check',cart);
 let checkouthtml='';
+console.log(dayjs());
+console.log(cart);
 cart.forEach((cartitem)=>{
     let matchingproduct;
     products.forEach((product)=>{
