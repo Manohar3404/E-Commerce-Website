@@ -38,14 +38,16 @@ export function Addtocart(productId){
  
  }
  export function updateOptions(productId,deliveryOptionId){
+    let matchingItem;
     cart.forEach((ele)=>{
-        let matchingItem;
+       
         if (ele.id===productId) {
             matchingItem=ele;
         }
-        ele.deliveryOptionId=deliveryOptionId;
-        localStorage.setItem('cart',JSON.stringify(cart));
+       
     });
+    matchingItem.deliveryOptionId=deliveryOptionId;
+    localStorage.setItem('cart',JSON.stringify(cart));
  }
 export function remove1(removeId) {
      cart.forEach((item,idx)=>{

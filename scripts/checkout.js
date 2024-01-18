@@ -4,6 +4,7 @@ import { moneyformat } from './utils/money.js';
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import {deliveryOptions} from "../data/deliveryOptions.js";
 console.log('check',cart);
+function renderordersummery(){
 let checkouthtml='';
 // console.log(dayjs());
 // console.log(cart);
@@ -73,6 +74,7 @@ cart.forEach((cartitem)=>{
        
     // console.log('ddd',checkouthtml);
 });
+console.log('delivery',cart);
 function setdeliveryoption(matchingproduct,cartitem){
     let deliveryHTML='';
     
@@ -117,6 +119,9 @@ document.querySelectorAll('.js-delivery-option')
     element.addEventListener('click',()=>{
         const {productId,deliveryId}=element.dataset;
         updateOptions(productId,deliveryId);
+        renderordersummery();
     });
 
 });
+}
+renderordersummery();
