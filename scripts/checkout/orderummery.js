@@ -3,6 +3,7 @@ import { cart,remove1,updateOptions} from "../../data/cart.js";
 import { moneyformat } from '../utils/money.js';
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import {deliveryOptions} from "../../data/deliveryOptions.js";
+import { renderpaymentsummary } from "./payment.js";
 console.log('check',cart);
 export function renderordersummery(){
 let checkouthtml='';
@@ -112,6 +113,7 @@ document.querySelectorAll('.delete-quantity-link').forEach((link) => {
         const productId = link.dataset.productId;
         remove1(productId);
         document.querySelector(`.cart-item-container-${productId}`).remove();
+        renderpaymentsummary();
     });
 });
 document.querySelectorAll('.js-delivery-option')
@@ -120,6 +122,7 @@ document.querySelectorAll('.js-delivery-option')
         const {productId,deliveryId}=element.dataset;
         updateOptions(productId,deliveryId);
         renderordersummery();
+        renderpaymentsummary();
     });
 
 });
